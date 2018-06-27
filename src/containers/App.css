@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+}
+
+.red {
+  color: red;
+}
+
+.red:hover {
+  color: blue
+}
+
+.bold {
+  font-weight: bold;
+}
+
+
+

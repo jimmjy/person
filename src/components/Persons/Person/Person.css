@@ -10,11 +10,12 @@
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
+    background: linear-gradient(to right, #d9a7c7, #fffcdc);
 }
 
 .personInput {
     padding: 10px;
-    background: #f0d1d1;
+    background: #f3eeee;
     border: 1px solid #989393;
     border-radius: 4px;
     box-shadow: 2px 2px 3px gray;
