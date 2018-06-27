@@ -10,7 +10,12 @@ class App extends Component {
       person: [
         { name: 'Carmander', age: 28, id: 1 },
         { name: 'Marc', age: 29, id: 2 },
-        { name: 'Stephanie', age: 26, id: 3 }
+        { name: 'Stephanie', age: 26, id: 3 },
+        { name: 'Jane', age: 35, id: 4 },
+        { name: 'Erich', age: 54, id: 5 },
+        { name: 'Jeff', age: 16, id: 6 },
+        { name: 'Rosalie', age: 43, id: 7 },
+
       ],
       otherSomething: 'something',
       showPersons: false,
