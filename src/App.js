@@ -8,8 +8,8 @@ class App extends Component {
     super();
     this.state = {
       person: [
-        { name: 'Max', age: 28, id: 1 },
-        { name: 'Manu', age: 29, id: 2 },
+        { name: 'Carmander', age: 28, id: 1 },
+        { name: 'Marc', age: 29, id: 2 },
         { name: 'Stephanie', age: 26, id: 3 }
       ],
       otherSomething: 'something',
