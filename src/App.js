@@ -8,11 +8,12 @@ class App extends Component {
     super();
     this.state = {
       person: [
-        { name: 'Max', age: 28 },
-        { name: 'Manu', age: 29 },
-        { name: 'Stephanie', age: 26 }
+        { name: 'Max', age: 28, id: 1 },
+        { name: 'Manu', age: 29, id: 2 },
+        { name: 'Stephanie', age: 26, id: 3 }
       ],
-      otherState: 'some other value'
+      otherSomething: 'something',
+      showPersons: false,
       };
     };
   
@@ -39,6 +40,11 @@ class App extends Component {
     })
   }
 
+  togglePersonsHandler = () => {
+    const doesShow = this.state.showPersons;
+    this.setState({showPersons: !doesShow});
+  }
+
   render() {
     const style = {
       backgroundColor: 'white',
@@ -48,27 +54,34 @@ class App extends Component {
       cursor: 'pointer'
     };
 
+    let persons = null;
+
+    if(this.state.showPersons) {
+      persons = (
+          < div >
+            {this.state.person.map((person, i) => {
+              return (
+                <Person name={person.name} age={person.age} key={person.id} />
+              );
+            })}
+            
+          </div >
+        );
+    }
+
+    const arrayOn = [<div>a</div>, <div>b</div>, <div>c</div>];
+
     return (
       <div className='App'>
         <h1>Hi, I'm a React App</h1>
         <p>This is really working!</p>
         <button 
           style={style}
-          onClick={() => this.switchNameHandler('Maximilian')}>Switch Name</button>
-        <Person 
-          name={this.state.person[0].name} 
-          age={this.state.person[0].age} 
-        />
-        <Person 
-          name={this.state.person[1].name} 
-          age={this.state.person[1].age}
-          click={this.switchNameHandler.bind(this, 'James')}
-          changed={this.nameChangeHandler} >My Hobbies include: Racing          
-        </Person>
-        <Person 
-          name={this.state.person[2].name} 
-          age={this.state.person[2].age} 
-        />
+          onClick={this.togglePersonsHandler}>Switch Name
+        </button>
+        {persons}
+        {arrayOn}
+
       </div>
     );
   }
