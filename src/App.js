@@ -69,7 +69,6 @@ class App extends Component {
         );
     }
 
-    const arrayOn = [<div>a</div>, <div>b</div>, <div>c</div>];
 
     return (
       <div className='App'>
@@ -80,7 +79,6 @@ class App extends Component {
           onClick={this.togglePersonsHandler}>Switch Name
         </button>
         {persons}
-        {arrayOn}
 
       </div>
     );
