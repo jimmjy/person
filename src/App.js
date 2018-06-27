@@ -18,32 +18,27 @@ class App extends Component {
     };
   
 
+//delete person button 
+detelePersonHandler = (personIndex) => {
+  const personCopy = [...this.state.person];
+  personCopy.splice(personIndex, 1);
+  this.setState({
+    person: personCopy
+  });  
+}
 
-  //switches users name
-  switchNameHandler = (newName) => {
-    this.setState({
-      person: [
-        { name: newName, age: 28 },
-        { name: 'Manu', age: 29 },
-        { name: 'Stephanie', age: 27 }
-      ]
-    });
-  };
+nameChangeHandler = (event, personIndex) => {
+  const persons = [...this.state.person];
+  persons[personIndex].name = event.target.value;
+  this.setState({
+    person: persons
+  })
+}
 
-  nameChangeHandler = (event) => {
-    this.setState({
-      person: [
-        { name: 'Max', age: 28 },
-        { name: event.target.value, age: 29 },
-        { name: 'Stephanie', age: 27 }
-      ]
-    })
-  }
-
-  togglePersonsHandler = () => {
-    const doesShow = this.state.showPersons;
-    this.setState({showPersons: !doesShow});
-  }
+togglePersonsHandler = () => {
+  const doesShow = this.state.showPersons;
+  this.setState({showPersons: !doesShow});
+}
 
   render() {
     const style = {
@@ -58,10 +53,16 @@ class App extends Component {
 
     if(this.state.showPersons) {
       persons = (
-          < div >
-            {this.state.person.map((person, i) => {
+          < div className="personRender">
+            {this.state.person.map((person, index) => {
               return (
-                <Person name={person.name} age={person.age} key={person.id} />
+                <Person 
+                name={person.name} 
+                age={person.age} 
+                key={person.id}
+                delete={this.detelePersonHandler.bind(this, index)} 
+                changed={(event) => this.nameChangeHandler(event, index)}
+                />
               );
             })}
             

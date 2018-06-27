@@ -1,8 +1,38 @@
 .Person {
     width: 60%;
     margin: 16px auto;
-    border: 1px solid rgb(159, 153, 153);
+    border: 1px solid #9f9999;
+    border-radius: 4px;
     box-shadow: 1px 2px 3px #ccc;
     padding: 16px;
     text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.personInput {
+    padding: 10px;
+    background: #f0d1d1;
+    border: 1px solid #989393;
+    border-radius: 4px;
+    box-shadow: 2px 2px 3px gray;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.deleteButton {
+    padding: 10px;
+    margin: 0 5px;
+    background: #bab5b5;
+    box-shadow: 2px 2px 3px gray;
+    border: 1px solid #f06c6c;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
 }
